@@ -74,13 +74,46 @@ Q.fx(h)$(ord(h)=1) = Q_0;
 u.lo(i,h) = 0;
 u.up(i,h) = 1;
 
+f0.lo(h) = min(P_0, Q_0);
+*from my mind: cause f0 from P to Q.
+
 eq_J..J =e= sum(h,-exp(-nu*(ord(h)-1))*(-m*f0(h)-u('2',h)-u('3',h)-
                  pp*P(h)+s(h)*P(h)*(2-P(h)/f0(h))));
 * try without g0
 
+model mineOptimization /all/;
 
+solve mineOptimization using dnlp maximizing J;
 
+Parameter PLOT_1 data for plotter;
+PLOT_1("y",h,"y")=y.l(h);
+PLOT_1("y",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_1 x y
 
+Parameter PLOT_2 data for plotter;
+PLOT_2("P",h,"y")=P.l(h);
+PLOT_2("P",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_2 x y
+
+Parameter PLOT_3 data for plotter;
+PLOT_3("Q",h,"y")=Q.l(h);
+PLOT_3("Q",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_3 x y
+
+Parameter PLOT_4 data for plotter;
+PLOT_4("u1",h,"y")=u.l('1',h);
+PLOT_4("u1",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_4 x y
+
+Parameter PLOT_5 data for plotter;
+PLOT_5("u2",h,"y")=u.l('2',h);
+PLOT_5("u2",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_5 x y
+
+Parameter PLOT_6 data for plotter;
+PLOT_6("u3",h,"y")=u.l('3',h);
+PLOT_6("u3",h,"x")=(ord(h)-1);
+$libinclude gnuplotxyz PLOT_6 x y
 
 
 
