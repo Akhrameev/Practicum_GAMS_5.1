@@ -79,7 +79,7 @@ f0.lo(h) = min(P_0, Q_0);
 
 eq_J..J =e= sum(h,-exp(-nu*(ord(h)-1))*(-m*f0(h)-u('2',h)-u('3',h)-
                  pp*P(h)+s(h)*P(h)*(2-P(h)/f0(h))));
-* try without g0
+* here I try without g0
 
 model mineOptimization /all/;
 
