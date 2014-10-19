@@ -13,7 +13,7 @@ P:
 Q:
 ![Q graph](Q.png?raw=true)
 u1:
-u1 is currently all zeros
+It's sad, but u1 is currently all zeros
 u2:
 ![u2 graph](u2.png?raw=true)
 u3:
